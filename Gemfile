@@ -12,6 +12,8 @@ group :assets do
   gem 'coffee-rails', '~> 4.1.0'
 end
 
+gem 'paperclip'
+
 gem 'jquery-rails'
 
 gem 'turbolinks'
@@ -27,4 +29,5 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'meta_request'
 end

@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :shouts, only: [:show]
   resources :text_shouts, only: :create
-  match 'users/show', to: 'users#show', via: 'get'
+  resources :photo_shouts, only: :create
+  resources :users, only: [:new, :create, :show] do
+    post 'follow', to: 'following_relationships#create'
+  end
 
 
 end

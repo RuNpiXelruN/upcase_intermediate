@@ -5,4 +5,9 @@
   <%= f.submit 'Shout' %>
 <% end %>
 
+<%= form_for @photo_shout do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit 'Shout' %>
+<% end %>
+
 <%= render @shouts %>

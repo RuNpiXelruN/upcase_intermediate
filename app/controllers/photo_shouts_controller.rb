@@ -1,10 +1,10 @@
-class TextShoutsController < ApplicationController
+class PhotoShoutsController < ApplicationController
 
   def create
     content = build_content
     @shout = current_user.shouts.build(content: content)
     if @shout.save
-      flash[:notice] = "Text shout successfully posted!"
+      flash[:notice] = "Photo shout successfully posted!"
       redirect_to dashboard_path
     else
       flash[:notice] = "Something went wrong :("
@@ -13,12 +13,11 @@ class TextShoutsController < ApplicationController
   end
 
   private
-
   def build_content
-    TextShout.new(text_shout_params)
+    PhotoShout.new(photo_shout_params)
   end
 
-  def text_shout_params
-    params.require(:text_shout).permit(:body)
+  def photo_shout_params
+    params.require(:photo_shout).permit(:image)
   end
 end
